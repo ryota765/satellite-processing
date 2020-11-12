@@ -1,0 +1,8 @@
+# Data files
+*.tif
+*.img
+*.png
+*.npy
+
+# Checkpoints
+.ipynb_checkpoints/*
