@@ -2,8 +2,8 @@ import numpy as np
 import gdal, gdalconst, osr
 
 num_bands = 2
-target_dir = '../tsumagoi/ALOS/PSR071001-1'
-img_paths = [f'{target_dir}/img-hh-alpsrp089780710-h1.img', f'{target_dir}/img-hv-alpsrp089780710-h1.img']
+target_dir = '../tsumagoi/ALOS/PSR071018'
+img_paths = [f'{target_dir}/img-hh-alpsrp092260710-h1.img', f'{target_dir}/img-hv-alpsrp092260710-h1.img']
 out_path = f'{target_dir}/hhhv.img'
 assert len(img_paths) == num_bands
 
@@ -23,7 +23,7 @@ ysize = band_array.shape[1]
 
 output = gdal.GetDriverByName('GTiff').Create(out_path, xsize, ysize, num_bands, dtype)
 for i in range(num_bands):
-    output.GetRasterBand(1).WriteArray(band_array[i])
+    output.GetRasterBand(i+1).WriteArray(band_array[i])
 
 output.FlushCache() 
 output = None

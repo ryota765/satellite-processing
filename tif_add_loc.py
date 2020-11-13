@@ -20,9 +20,10 @@ loc_dict_frame = {
     'PSR081003': [217450.09, 4093920.42, 6200, 5500],
 }
 DTYPE = gdal.GDT_Float32
-folder_name = 'PSR071001-2'
-input_path = f'../tsumagoi/ALOS/{folder_name}/hhhv071001.img'
-output_path = f'../tsumagoi/ALOS/{folder_name}/{folder_name}_hhhv.img'
+folder_name = 'PSR071018'
+input_path = f'../tsumagoi/ALOS/{folder_name}/hhhv.img'
+output_path = f'{folder_name}_pre.tif' # for single image 
+# output_path =  f'../tsumagoi/ALOS/{folder_name}/{folder_name}_hhhv.img' # for merging image
 XSIZE = loc_dict_frame[folder_name][2]
 YSIZE = loc_dict_frame[folder_name][3]
 UL_X = loc_dict_frame[folder_name][0]
